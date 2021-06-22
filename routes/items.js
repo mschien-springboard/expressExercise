@@ -23,7 +23,7 @@ router.get('/:name', (req, res, next) => {
 router.post('/', (req, res, next) => {
     try {
         let newItem = new Item(req.body.name, req.body.price);
-        return res.json({ item: newItem });
+        return res.status(201).json({ item: newItem });
     } catch (e) {
         return next(e);
     }
